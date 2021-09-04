@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  api:
+    build: ../notepad-proxy
+    environment:
+      - NODE_ENV=development
+      - API_URL=https://api.github.com
+    volumes:
+      - ../notepad-proxy/develop.sh:/app/develop.sh
+      - ../notepad-proxy/src:/app/src
+    ports:
+      - 8001:8001
+      - 9230:9230
+    command: sh develop.sh
