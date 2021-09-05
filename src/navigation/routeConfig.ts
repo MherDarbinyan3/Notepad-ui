@@ -11,14 +11,14 @@ interface Routes {
   [key: string]: Route;
 }
 
-const Home = React.lazy(() => import('../routes/home/Home'));
+const Notepads = React.lazy(() => import('../routes/notepad/Notepads'));
 
 export const routeConfig: Routes = {
   home: {
     path: '/',
-    name: 'Home',
+    name: 'Notepads',
     exact: true,
-    component: Home,
+    component: Notepads,
   },
 };
 
