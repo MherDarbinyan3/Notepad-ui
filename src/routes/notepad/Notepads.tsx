@@ -13,6 +13,7 @@ interface Notepad {
 }
 
 interface Note {
+  id: number,
   title: string,
   note: string,
 }
@@ -54,7 +55,7 @@ export const Notepads: React.FunctionComponent = () => {
     <>
       <div className='action'>
         <Button
-          onClick={() => history.push('/create')}
+          onClick={() => history.push('/new')}
           type='primary'
           size='large'
         >
