@@ -13,6 +13,7 @@ interface Routes {
 
 const Notepads = React.lazy(() => import('../routes/notepad/Notepads'));
 const NewNotepad = React.lazy(() => import('../routes/notepad/newNotepad/NewNotepad'));
+const EditNotepad = React.lazy(() => import('../routes/notepad/editNotepad/EditNotepad'));
 
 export const routeConfig: Routes = {
   notepad: {
@@ -26,6 +27,12 @@ export const routeConfig: Routes = {
     name: 'New',
     exact: true,
     component: NewNotepad,
+  },
+  editNotepad: {
+    path: '/:id',
+    name: 'Edit',
+    exact: true,
+    component: EditNotepad,
   },
 };
 
