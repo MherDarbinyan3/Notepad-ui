@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Button, Table } from 'antd';
 
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { routeConfig } from '../../navigation/routeConfig';
 
 import './notepads.scss';
 
@@ -55,7 +56,7 @@ export const Notepads: React.FunctionComponent = () => {
     <>
       <div className='action'>
         <Button
-          onClick={() => history.push('/new')}
+          onClick={() => history.push(routeConfig.newNotepad.path)}
           type='primary'
           size='large'
         >

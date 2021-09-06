@@ -4,6 +4,7 @@ import { Form, Input, Button, Row, Col } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 
 import { useLocalStorage } from '../../../hooks/useLocalStorage';
+import { routeConfig } from '../../../navigation/routeConfig';
 
 import FormItem from '../../../components/shared/FormItem/FormItem';
 import NoteItem from '../../../components/shared/NoteItem/NoteItem';
@@ -75,7 +76,7 @@ export const EditNotepad: React.FunctionComponent = () => {
     setNotepadItems([...filteredItems, item]);
     setLoading(false);
 
-    history.push('/');
+    history.push(routeConfig.notepad.path);
 };
 
   const handleDeleteNotepad = () => {
@@ -86,7 +87,7 @@ export const EditNotepad: React.FunctionComponent = () => {
     setNotepadItems([...filteredItems]);
     setLoading(false);
 
-    history.push('/');
+    history.push(routeConfig.notepad.path);
   }
 
   useEffect(() => {
@@ -110,7 +111,7 @@ export const EditNotepad: React.FunctionComponent = () => {
       <Button
         type="primary"
         icon={<LeftOutlined />}
-        onClick={() => history.push('/')}
+        onClick={() => history.push(routeConfig.notepad.path)}
         className='backButton'
       >
         Back
@@ -141,6 +142,7 @@ export const EditNotepad: React.FunctionComponent = () => {
             <Button
               size='large'
               className='viewStat'
+              onClick={() => history.push(routeConfig.stat.path)}
             >
               View Stats
             </Button>
