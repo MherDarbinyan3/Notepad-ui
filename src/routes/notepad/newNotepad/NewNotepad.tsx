@@ -4,6 +4,7 @@ import { Form, Input, Button, Row, Col } from 'antd';
 import { LeftOutlined } from '@ant-design/icons';
 
 import { useLocalStorage } from '../../../hooks/useLocalStorage';
+import { routeConfig } from '../../../navigation/routeConfig';
 
 import FormItem from '../../../components/shared/FormItem/FormItem';
 import NoteItem from '../../../components/shared/NoteItem/NoteItem';
@@ -44,7 +45,7 @@ export const NewNotepad: React.FunctionComponent = () => {
     setNotepadItems([...notepadItems, item]);
     setLoading(false);
 
-    history.push('/');
+    history.push(routeConfig.notepad.path);
   };
 
   return (
@@ -57,7 +58,7 @@ export const NewNotepad: React.FunctionComponent = () => {
       <Button
         type="primary"
         icon={<LeftOutlined />}
-        onClick={() => history.push('/')}
+        onClick={() => history.push(routeConfig.notepad.path)}
         className='backButton'
       >
         Back
@@ -85,7 +86,11 @@ export const NewNotepad: React.FunctionComponent = () => {
         </Col>
         <Col span={6}>
           <Row align='middle' justify='end'>
-            <Button size='large' className='viewStat'>
+            <Button
+              size='large'
+              className='viewStat'
+              onClick={() => history.push(routeConfig.stat.path)}
+            >
               View Stats
             </Button>
             <Button

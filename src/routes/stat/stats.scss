@@ -1,0 +1,17 @@
+.stats {
+  display: flex;
+  margin: 32px 0 0 32px;
+}
+
+.verticalLabel {
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+  text-align: center;
+  color: #333;
+  margin-right: 16px;
+}
+
+.actionButton {
+  width: 30%;
+  text-align: right;
+}
